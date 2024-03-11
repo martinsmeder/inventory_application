@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 const ConsoleSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
-  url: { type: String, required: true },
 });
 
 // Virtual for dynamically generating a URL for each console document based on

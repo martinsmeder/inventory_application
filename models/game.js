@@ -5,10 +5,13 @@ const Schema = mongoose.Schema;
 const GameSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
-  console: { type: Schema.Types.ObjectId, ref: "Console", required: true },
+  console_model: {
+    type: Schema.Types.ObjectId,
+    ref: "Console",
+    required: true,
+  },
   price: { type: Number, required: true },
   number_in_stock: { type: Number, required: true },
-  url: { type: String, required: true },
 });
 
 // Virtual for dynamically generating a URL for each game document based on
