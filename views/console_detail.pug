@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+  h1 Console: #{console_model.name}
+  p #[strong Description:] #{console_model.description}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Games
+    if console_games.length
+      dl
+        each game in console_games
+          dt
+            a(href=game.url) #{game.name}
+            span  - #{game.description} 
+          
+    else
+      p This console has no games.

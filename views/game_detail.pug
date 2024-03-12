@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Title: #{game.name}
+
+  p #[strong Console: ]
+    a(href=game.console_model.url) #{game.console_model.name}
+  p #[strong Description:] #{game.description}
+  p #[strong Price:] #{game.price}
+  p #[strong Amount in stock:] #{game.number_in_stock}
+
+
+//- name: { type: String, required: true },
+//-   description: { type: String, required: true },
+//-   console_model: {
+//-     type: Schema.Types.ObjectId,
+//-     ref: "Console",
+//-     required: true,
+//-   },
+//-   price: { type: Number, required: true },
+//-   number_in_stock: { type: Number, required: true },

@@ -2,4 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to #[em Game Inventory], a basic Express website.
+
+  p The inventory has the following record counts:
+
+  ul
+    li #[strong Games:] !{game_count}
+    li #[strong Consoles:] !{console_count}
+ 
+
