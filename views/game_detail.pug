@@ -9,13 +9,10 @@ block content
   p #[strong Price:] #{game.price}
   p #[strong Amount in stock:] #{game.number_in_stock}
 
+  hr
+  p
+  a(href=game.url+'/delete') Delete game
+  p
+  a(href=game.url+'/update') Update game
 
-//- name: { type: String, required: true },
-//-   description: { type: String, required: true },
-//-   console_model: {
-//-     type: Schema.Types.ObjectId,
-//-     ref: "Console",
-//-     required: true,
-//-   },
-//-   price: { type: Number, required: true },
-//-   number_in_stock: { type: Number, required: true },
+

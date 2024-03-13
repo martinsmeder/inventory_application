@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  h1 #{title}
+
+  form(method='POST')
+      label(for='name') Console:
+      input(type='text', placeholder='Console name:' name='name' required value=(undefined===console_model ? '' : console_model.name) )
+      input(type='text', placeholder='Description:' name='description' required value=(undefined===console_model ? '' : console_model.description) )
+      button(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
