@@ -8,7 +8,14 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
+const compression = require("compression");
+const helmet = require("helmet");
+
 const app = express();
+
+// Use helmet to apply security related middleware functions, in order to protect
+// against common web vulnerabilities
+app.use(helmet());
 
 // Set up mongoose connection
 const mongoose = require("mongoose");
@@ -19,6 +26,10 @@ main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
 }
+
+// Compress all routes HTTP responses sent to the client in order to reduce
+// load time
+app.use(compression());
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
